@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Made in Italy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+</head>
+<body class="italiana-regular">
+
+  <div class="menu">
+    <a href="#intro">Introduzione</a>
+    <a href="#sis">Sistemi informatici</a>
+    <a href="#az">Aziende</a>
+  </div>
+
+  <div class="splashscreen">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="./img/img1.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/img2.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/img3.jpg" style="width:100%">
+      </div>
+    </div>
+    <img class="logo" src="./img/Made_in_italy_logo.png" alt="Logo Made in Italy">
+  </div>
+
+  <div id="intro" class="pagina">
+    <div id="introduzione">
+      <br>
+      <h1>intro</h1>
+      <p>
+        Il marchio <em>Made in Italy</em> è molto più di un’indicazione di provenienza:
+        è un simbolo globale di eccellenza, stile e qualità.
+        Racconta la storia di un Paese che ha saputo unire creatività, tradizione e innovazione in prodotti apprezzati in tutto il mondo.
+        L’Italia si distingue per la cura artigianale, l’eleganza del design e la passione che anima ogni fase produttiva.
+      </p>
+      <h3>Cosa significa <em>Made in Italy</em>? Definizione e valore del marchio</h3>
+      <p><em>Made in Italy</em> indica che un prodotto è stato ideato e realizzato in Italia. Ma il marchio rappresenta anche qualità, estetica e autenticità. Il suo valore è legato alla reputazione del sapere artigianale italiano, che unisce tradizione e capacità di innovare. Per questo è tutelato anche a livello legale, per proteggere la vera produzione italiana.</p>
+    </div>
+    <div id="sis">
+      <br>
+      <div id="sistemi">
+        <h1>settori di eccellenza</h1>
+        <p style="margin-bottom: 2%;">Il <em>Made in Italy</em> si esprime al meglio in settori strategici:</p>
+        <ul>
+          <li><b>Moda:</b>l’Italia è un punto di riferimento mondiale con marchi e stilisti iconici.</li><br>
+          <li><b>Alimentare: </b>cibo come pasta, olio, vino e formaggi raccontano la tradizione gastronomica italiana.</li><br>
+          <li><b>Design: </b>apprezzato per eleganza e funzionalità, dagli arredi agli oggetti d’uso quotidiano.</li><br>
+          <li><b>Automotive: </b>Ferrari, Lamborghini, Maserati sono simboli di design e ingegneria d’eccellenza.</li><br>
+          <li><b>Artigianato: </b>ceramiche, vetro e lavorazioni tradizionali tramandano competenze uniche.</li><br>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="az">
+      <br>
+      <div id="aziende">
+        <h1>aziende</h1>
+      </div>
+        <div class="flexPodcast">
+          <img src="img/Fendi_logo.svg.png" alt="fendilogo" style="width: 15%;">
+          
+          <audio controls class="podcast-player">
+            <source src="./podcasts/kadr complete.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>  
+        </div>
+
+        <div class="flexPodcast">
+          <img src="img/Logo_Leonardo.png" alt="leonardologo" style="width: 15%;">
+          
+          <audio controls class="podcast-player">
+            <source src="./podcasts/Azienda Leonardo.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>  
+        </div>
+
+        <div class="flexPodcast">
+          <img src="img/ferreroLogo.svg" alt="ferreroLogo" style="width: 15%;">
+          
+          <audio controls class="podcast-player">
+            <source src="./podcasts/Crimella.MP3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>  
+        </div>
+
+        <div class="flexPodcast">
+          <img src="img/Versace.png" alt="versaceLogo" style="width: 15%;">
+          
+          <audio controls class="podcast-player">
+            <source src="./podcasts/rovellini_gianazza.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>  
+        </div>
+
+        <div class="flexPodcast">
+          <img src="img/Lavazza_-_logo_(Italy,_1995).svg.png" alt="lavazzaLogo" style="width: 15%;">
+          
+          <audio controls class="podcast-player">
+            <source src="./podcasts/silvestris_diliberto.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>  
+        </div>
+    </div>
+    
+  </div>
+
+  <hr>
+    
+  <footer>
+    <p>All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+
+    slides[slideIndex - 1].style.display = "block";  
+
+    setTimeout(showSlides, 4000); // Cambia immagine ogni 4 secondi
+  }
+</script>
+
+</html>
