@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Made in Italy</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/logo.svg" type="image/svg+xml">
 </head>
 <body class="italiana-regular">
 
@@ -15,7 +15,7 @@
     <a href="#az">Aziende</a>
   </div>
 
-  <div class="splashscreen">
+  <div class="slide">
     <div class="slideshow-container">
       <div class="mySlides fade">
         <img src="./img/img1.jpg" style="width:100%">
@@ -49,11 +49,11 @@
         <h1>settori di eccellenza</h1>
         <p style="margin-bottom: 2%;">Il <em>Made in Italy</em> si esprime al meglio in settori strategici:</p>
         <ul>
-          <li><b>Moda:</b>l’Italia è un punto di riferimento mondiale con marchi e stilisti iconici.</li><br>
-          <li><b>Alimentare: </b>cibo come pasta, olio, vino e formaggi raccontano la tradizione gastronomica italiana.</li><br>
-          <li><b>Design: </b>apprezzato per eleganza e funzionalità, dagli arredi agli oggetti d’uso quotidiano.</li><br>
-          <li><b>Automotive: </b>Ferrari, Lamborghini, Maserati sono simboli di design e ingegneria d’eccellenza.</li><br>
-          <li><b>Artigianato: </b>ceramiche, vetro e lavorazioni tradizionali tramandano competenze uniche.</li><br>
+          <li><b>Moda:</b>l’Italia è un punto di riferimento mondiale con marchi e stilisti iconici.</li>
+          <li><b>Alimentare: </b>cibo come pasta, olio, vino e formaggi raccontano la tradizione gastronomica italiana.</li>
+          <li><b>Design: </b>apprezzato per eleganza e funzionalità, dagli arredi agli oggetti d’uso quotidiano.</li>
+          <li><b>Automotive: </b>Ferrari, Lamborghini, Maserati sono simboli di design e ingegneria d’eccellenza.</li>
+          <li><b>Artigianato: </b>ceramiche, vetro e lavorazioni tradizionali tramandano competenze uniche.</li>
         </ul>
       </div>
     </div>
@@ -64,48 +64,48 @@
         <h1>aziende</h1>
       </div>
         <div class="flexPodcast">
-          <img src="img/Fendi_logo.svg.png" alt="fendilogo" style="width: 15%;">
-          
-          <audio controls class="podcast-player">
+          <img src="img/Fendi_logo.svg" alt="fendilogo" class="podcast-logo">
+          <audio controls class="podcast-player" controlslist="nodownload noplaybackrate" oncontextmenu="return false;">
             <source src="./podcasts/kadr complete.mp3" type="audio/mp3">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
+          <div class="podcast-credits">Fatto da: Abdalla Kadr, Samuel Quaranta</div>
         </div>
 
         <div class="flexPodcast">
-          <img src="img/Logo_Leonardo.png" alt="leonardologo" style="width: 15%;">
-          
-          <audio controls class="podcast-player">
+          <img src="img/Logo_Leonardo.svg" alt="leonardologo" class="podcast-logo">
+          <audio controls class="podcast-player" controlslist="nodownload noplaybackrate" oncontextmenu="return false;">
             <source src="./podcasts/Azienda Leonardo.mp3" type="audio/mp3">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
+          <div class="podcast-credits">Fatto da: Federico Scotti, Rienzner Herman</div>
         </div>
 
         <div class="flexPodcast">
-          <img src="img/ferreroLogo.svg" alt="ferreroLogo" style="width: 15%;">
-          
-          <audio controls class="podcast-player">
+          <img src="img/ferreroLogo.svg" alt="ferreroLogo" class="podcast-logo">
+          <audio controls class="podcast-player" controlslist="nodownload noplaybackrate" oncontextmenu="return false;">
             <source src="./podcasts/Crimella.MP3" type="audio/mp3">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
+          <div class="podcast-credits">Fatto da: Kevin Ortega, Luca Crimella</div>
         </div>
 
         <div class="flexPodcast">
-          <img src="img/Versace.png" alt="versaceLogo" style="width: 15%;">
-          
-          <audio controls class="podcast-player">
+          <img src="img/Versace.svg" alt="versaceLogo" class="podcast-logo" >
+          <audio controls class="podcast-player" controlslist="nodownload noplaybackrate" oncontextmenu="return false;">
             <source src="./podcasts/rovellini_gianazza.mp3" type="audio/mp3">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
+          <div class="podcast-credits">Fatto da: Lorenzo Gianazza, Davide Rovellini</div>
         </div>
 
         <div class="flexPodcast">
-          <img src="img/Lavazza_-_logo_(Italy,_1995).svg.png" alt="lavazzaLogo" style="width: 15%;">
-          
-          <audio controls class="podcast-player">
+          <img src="img/Lavazza_-_logo_(Italy,_1995).svg" alt="lavazzaLogo" class="podcast-logo">
+          <audio controls class="podcast-player" controlslist="nodownload noplaybackrate" oncontextmenu="return false;">
             <source src="./podcasts/silvestris_diliberto_merged.mp3" type="audio/mp3">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
+          <div class="podcast-credits">Fatto da: Davide Silvestris, Alessandro Diliberto</div>
         </div>
     </div>
     
@@ -126,18 +126,29 @@
 
   function showSlides() {
     let slides = document.getElementsByClassName("mySlides");
-
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
     }
-
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
-
     slides[slideIndex - 1].style.display = "block";  
-
-    setTimeout(showSlides, 4000); // Cambia immagine ogni 4 secondi
+    setTimeout(showSlides, 4000); 
   }
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const audios = document.querySelectorAll('.podcast-player');
+    audios.forEach(audio => {
+      audio.addEventListener('play', function() {
+        audios.forEach(other => {
+          if (other !== audio) {
+            other.pause();
+            other.currentTime = 0;
+          }
+        });
+      });
+    });
+  });
 </script>
 
 </html>
